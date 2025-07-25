@@ -6,7 +6,7 @@
 
 <br>
 
-<img src="https://i.imgur.com/vH9xJ2v.png" alt="Generative Art Studio Screenshot">
+<img src="screenshot_1" alt="Generative Art Studio Screenshot">
 
 <br>
 
