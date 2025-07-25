@@ -3,21 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI ART MAKER!!!!</title>
-    <link rel="stylesheet" href="styles.css">
-
+    <title>Generative Art Studio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    
-    <div class="container">
-        <h1>AI ART MAKER!!!!</h1>
-        <canvas id="aerCanvas"></canvas>
-        <div class="controls">
-            <button id="generateBtn">Generate</button>
+    <div class="background-gradient"></div>
+
+    <div class="app-container">
+        <div class="controls-panel">
+            <h2 class="title">Art Studio</h2>
+            
+            <div class="control-group">
+                <label>Shape Type</label>
+                <div class="radio-group">
+                    <input type="radio" id="rectangles" name="shapeType" value="rectangles" checked>
+                    <label for="rectangles">Rects</label>
+                    <input type="radio" id="circles" name="shapeType" value="circles">
+                    <label for="circles">Circles</label>
+                    <input type="radio" id="lines" name="shapeType" value="lines">
+                    <label for="lines">Lines</label>
+                </div>
+            </div>
+
+            <div class="control-group">
+                <label for="shapeCountSlider">Shape Count (<span id="shapeCountValue">300</span>)</label>
+                <input type="range" id="shapeCountSlider" min="10" max="1500" value="300">
+            </div>
+
+            <div class="control-group">
+                <label for="maxSizeSlider">Max Shape Size (<span id="maxSizeValue">100</span>)</label>
+                <input type="range" id="maxSizeSlider" min="5" max="300" value="100">
+            </div>
+
+            <div class="control-group">
+                <label for="paletteSelector">Color Palette</label>
+                <select id="paletteSelector">
+                    <option value="sunset">Sunset</option>
+                    <option value="forest">Forest</option>
+                    <option value="oceanic">Oceanic</option>
+                    <option value="monochrome">Monochrome</option>
+                    <option value="random">Full Random</option>
+                </select>
+            </div>
+
+            <div class="control-group">
+                <label for="bgColorPicker">Background Color</label>
+                <input type="color" id="bgColorPicker" value="#101010">
+            </div>
+
+            <div class="button-group">
+                <button id="generateBtn" class="primary-btn">Regenerate</button>
+                <button id="saveBtn">Save Artwork</button>
+            </div>
+        </div>
+
+        <div class="canvas-container">
+            <canvas id="artCanvas"></canvas>
         </div>
     </div>
 
-    <script src="script.js"></script>
-
+    <script src="script.js" defer></script>
 </body>
 </html>
