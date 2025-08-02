@@ -3,65 +3,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Generative Art Studio</title>
+    <title>Quantum Particle Dance</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Exo+2:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="background-gradient"></div>
-
-    <div class="app-container">
-        <div class="controls-panel">
-            <h2 class="title">Art Studio</h2>
-            
-            <div class="control-group">
-                <label>Shape Type</label>
-                <div class="radio-group">
-                    <input type="radio" id="rectangles" name="shapeType" value="rectangles" checked>
-                    <label for="rectangles">Rects</label>
-                    <input type="radio" id="circles" name="shapeType" value="circles">
-                    <label for="circles">Circles</label>
-                    <input type="radio" id="lines" name="shapeType" value="lines">
-                    <label for="lines">Lines</label>
+    <div class="stars-background"></div>
+    <div class="nebula-overlay"></div>
+    
+    <div class="game-container">
+        <div class="ui-overlay">
+            <div class="header">
+                <h1 class="game-title">Quantum Particle Dance</h1>
+                <div class="score-display">
+                    <div class="score">Score: <span id="score">0</span></span></div>
+                    <div class="level">Level: <span id="level">1</span></div>
+                    <div class="particles">Particles: <span id="particleCount">0</span></div>
                 </div>
             </div>
-
-            <div class="control-group">
-                <label for="shapeCountSlider">Shape Count (<span id="shapeCountValue">300</span>)</label>
-                <input type="range" id="shapeCountSlider" min="10" max="1500" value="300">
+            
+            <div class="controls-info">
+                <div class="control-item">
+                    <span class="key">WASD</span>
+                    <span class="desc">Move Quantum Field</span>
+                </div>
+                <div class="control-item">
+                    <span class="key">SPACE</span>
+                    <span class="desc">Emit Particles</span>
+                </div>
+                <div class="control-item">
+                    <span class="key">SHIFT</span>
+                    <span class="desc">Quantum Shift</span>
+                </div>
             </div>
-
-            <div class="control-group">
-                <label for="maxSizeSlider">Max Shape Size (<span id="maxSizeValue">100</span>)</label>
-                <input type="range" id="maxSizeSlider" min="5" max="300" value="100">
-            </div>
-
-            <div class="control-group">
-                <label for="paletteSelector">Color Palette</label>
-                <select id="paletteSelector">
-                    <option value="sunset">Sunset</option>
-                    <option value="forest">Forest</option>
-                    <option value="oceanic">Oceanic</option>
-                    <option value="monochrome">Monochrome</option>
-                    <option value="random">Full Random</option>
-                </select>
-            </div>
-
-            <div class="control-group">
-                <label for="bgColorPicker">Background Color</label>
-                <input type="color" id="bgColorPicker" value="#101010">
-            </div>
-
-            <div class="button-group">
-                <button id="generateBtn" class="primary-btn">Regenerate</button>
-                <button id="saveBtn">Save Artwork</button>
+            
+            <div class="game-stats">
+                <div class="stat-bar">
+                    <div class="stat-label">Energy</div>
+                    <div class="stat-fill" id="energyBar"></div>
+                </div>
+                <div class="stat-bar">
+                    <div class="stat-label">Harmony</div>
+                    <div class="stat-fill" id="harmonyBar"></div>
+                </div>
             </div>
         </div>
-
-        <div class="canvas-container">
-            <canvas id="artCanvas"></canvas>
+        
+        <canvas id="gameCanvas"></canvas>
+        
+        <div class="particle-effects">
+            <div class="effect-layer" id="trailLayer"></div>
+            <div class="effect-layer" id="glowLayer"></div>
+        </div>
+        
+        <div class="game-messages" id="gameMessages"></div>
+        
+        <div class="menu-overlay" id="menuOverlay">
+            <div class="menu-content">
+                <h2>Quantum Particle Dance</h2>
+                <p class="menu-description">
+                    Navigate the quantum realm, harmonize particles, and create beautiful cosmic patterns.
+                    Your mission is to achieve perfect particle resonance across multiple dimensions.
+                </p>
+                <div class="menu-buttons">
+                    <button class="menu-btn primary" id="startBtn">Begin Quantum Journey</button>
+                    <button class="menu-btn secondary" id="tutorialBtn">Tutorial</button>
+                    <button class="menu-btn secondary" id="settingsBtn">Settings</button>
+                </div>
+            </div>
         </div>
     </div>
 
